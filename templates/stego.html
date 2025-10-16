@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Final Challenge</title>
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body>
+  <div class="header">Final Challenge</div>
+  <div class="container">
+    <a href="{{ url_for('static', filename='img.jpeg') }}" download><button>Download Image</button></a>
+    
+    <div class="flag-box" style="margin-top: 20px;">Decrypt using  b64 and XOR + one time pad(Hex) and then use the clue: {{ encrypted_flag }}</div>
+    <p><b>CLUE</b> Enemy: You will <em>Rot</em> in hell <b>8</b>8 HH</p>
+    
+    <form id="stego-form" onsubmit="submitFlag(event)">
+      <label>Message:</label>
+      <input type="text" id="flag-input" name="flag" required>
+      <button type="submit">Submit</button>
+    </form>
+    
+    <div id="error-msg" style="color: #ff6b6b; margin-top: 15px; display: none; font-weight: bold;"></div>
+  </div>
+
+  <script>
+    function submitFlag(event) {
+      event.preventDefault();
+      var flagInput = document.getElementById('flag-input').value.trim();
+      var errorDiv = document.getElementById('error-msg');
+      
+      fetch('/final', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: 'flag=' + encodeURIComponent(flagInput)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert(data.flag);
+          document.getElementById('stego-form').style.display = 'none';
+        } else {
+          errorDiv.textContent = data.message;
+          errorDiv.style.display = 'block';
+        }
+      })
+      .catch(error => {
+        errorDiv.textContent = 'Error: ' + error;
+        errorDiv.style.display = 'block';
+      });
+    }
+  </script>
+</body>
+</html>

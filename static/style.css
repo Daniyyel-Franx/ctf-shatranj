@@ -1,0 +1,52 @@
+body {
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  color: #F6F8FF;
+  margin: 0;
+}
+.header {
+  background-color: #222236;
+  padding: 30px;
+  text-align: center;
+  font-size: 2em;
+  letter-spacing: 1.5px;
+  border-bottom: 5px solid #43cea2;
+}
+.container {
+  margin: 40px auto;
+  background-color: rgba(44,62,80, 0.98);
+  padding: 40px 60px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 16px;
+  max-width: 560px;
+}
+input[type="text"], input[type="password"] {
+  width: 97%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 12px 0;
+  font-size: 1em;
+}
+button {
+  background: linear-gradient(90deg,#43cea2,#185a9d);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 28px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: box-shadow .3s;
+}
+button:hover {
+  box-shadow: 0 5px 20px #43cea2;
+}
+.flag-box {
+  background: #232836;
+  border: 2px solid #43cea2;
+  border-radius: 7px;
+  padding: 12px;
+  color: #43cea2;
+  font-weight: bold;
+  margin-top: 20px;
+}

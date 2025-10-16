@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Search Portal</title>
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body>
+  <div class="header">Search Portal</div>
+  <div class="container">
+    <form onsubmit="return false;">
+      <label>Search Query:</label>
+      <input id="query" type="text" name="query">
+      <button type="button" onclick="showResult()">Search</button>
+    </form>
+    
+    <div id="result" style="margin-top: 20px;"></div>
+    
+    <div id="next-stage" style="display:none; margin-top: 25px; background: rgba(67, 206, 162, 0.1); padding: 15px; border: 2px solid #43cea2; border-radius: 7px;">
+      <a href="/cipher"><button style="width: 100%; margin-top: 10px;">→ Proceed</button></a>
+    </div>
+  </div>
+  
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

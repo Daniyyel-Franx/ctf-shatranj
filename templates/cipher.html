@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Crypto Challenge</title>
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body>
+  <div class="header">Crypto Challenge</div>
+  <div class="container">
+    <div class="flag-box">{{ encrypted }}</div>
+    
+    <form action="/cipher" method="post">
+      <label>Answer:</label>
+      <input type="text" name="answer" required>
+      <button type="submit">Submit</button>
+    </form>
+    
+    {% if next_url %}
+      <div style="margin-top:20px; background: rgba(67, 206, 162, 0.1); padding: 15px; border-radius: 7px; border: 2px solid #43cea2;">
+        <a href="{{ next_url }}"><button style="width: 100%; margin-top: 10px;">→ Proceed</button></a>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>

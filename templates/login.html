@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login Portal</title>
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body>
+  <div class="header">Login Portal</div>
+  <div class="container">
+    <form action="/login" method="post">
+      <label>Username:</label>
+      <input type="text" name="username" required>
+      <label>Password:</label>
+      <input type="text" name="password" required>
+      <button type="submit">Login</button>
+    </form>
+    
+    {% if error %}
+      <div style="color: #ff6b6b; margin-top: 15px; font-weight: bold;">{{ error }}</div>
+    {% endif %}
+    
+    {% if clue %}
+      <script>alert('Go to {{ clue }}')</script>
+    {% endif %}
+  </div>
+</body>
+</html>
