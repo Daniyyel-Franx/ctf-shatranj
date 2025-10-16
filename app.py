@@ -184,7 +184,8 @@ def login():
         
         # Vulnerable to SQLi
         if check_sql_injection(uname, pwd):
-            clue = base64.b64encode(b'http://127.0.0.1:5000/xss').decode()
+           clue = base64.b64encode(b'https://ctf-shatranj.onrender.com/xss').decode()
+
         else:
             error = "Invalid credentials"
     
