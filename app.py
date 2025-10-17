@@ -254,7 +254,7 @@ def final():
     user_flag = request.form.get('flag', '').strip()
     true_flag = "CYS{CY5C0M_SAV3S_!ND1@}"
     
-    if user_flag == "You are the SAVIOUR!!!":
+    if user_flag == "You are the SAVIOUR!!!" or user_flag=="You are the SATIOUP!!!":
         return jsonify({'success': True, 'flag': true_flag})
     else:
         return jsonify({'success': False, 'message': 'Incorrect message'})
