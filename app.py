@@ -243,7 +243,9 @@ def stego():
     xor_encrypted = ''.join([chr(ord(a) ^ ord(b)) for a, b in zip(intermediate_before_rot, pad)])
 
     # Step C: publish a base64 of the XOR-encrypted bytes (so first step the player does is base64 decode)
-    encrypted_flag = base64.b64encode(xor_encrypted.encode()).decode()
+    '''encrypted_flag = base64.b64encode(xor_encrypted.encode()).decode()'''
+    encrypted_flag="BjUgZCw8KmgrOiZsDAcLAQYRCXV0dw=="
+
 
     true_flag = "CYS{CY5C0M_SAV3S_!ND1@}"
 
